@@ -18,6 +18,19 @@ $(function () {
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
 });
+
+// Adds time and day to current day (updates in real time)
+
+function updateTime () {
+  var date = new Date();
+  date.setDate(date.getDate()+5);
+
+var currentDayP = document.getElementById('currentDay');
+currentDayP.textContent = date;
+
+setTimeout(updateTime,1000);
+  
+}
+
+updateTime();
